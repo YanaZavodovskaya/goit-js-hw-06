@@ -1,16 +1,13 @@
-const inputArea = document.getElementById("name-input");
-const outputArea = document.getElementById("name-output");
+const inputText = document.getElementById("name-input");
+const outputText = document.getElementById("name-output");
 
-function textMarkup(text) {
-  outputArea.textContent = text.target.value;
+inputText.addEventListener("input", textMarkup);
+inputText.addEventListener("blur", textMarkup);
+
+function textMarkup(evt) {
+  if (outputText.textContent === "") {
+      outputText.textContent = "Anonymous";
+  } else {
+    outputText.textContent = evt.target.value;
+    }  
 }
-
-inputArea.addEventListener("input", textMarkup);
-
-function makeBlur() {
-  if (outputArea.textContent === "") {
-    outputArea.textContent = "Anonymous";
-  }
-}
-
-inputArea.addEventListener("blur", makeBlur);
