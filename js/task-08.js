@@ -15,5 +15,6 @@ const object = {
     email: `${email.value}`,
     password: `${password.value}`
 }
+  console.log(object);
 submitForm.reset()
 }
