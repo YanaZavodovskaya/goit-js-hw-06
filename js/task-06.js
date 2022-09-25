@@ -1,10 +1,11 @@
 const inputBox = document.getElementById("validation-input");
 
-function symbolsOutput(text) {
-  let symbolsInput = text.target.value.length;
+inputBox.addEventListener("blur", symbolsOutput);
 
-  symbolsInput === 6
+function symbolsOutput(evt) {
+  let symbolsInput = evt.target.value.length;
+  // console.log(inputBox.dataset.length);
+  symbolsInput === Number(inputBox.dataset.length)
     ? (inputBox.classList = "valid")
     : (inputBox.classList = "invalid");
 }
-inputBox.addEventListener("blur", symbolsOutput);
