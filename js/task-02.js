@@ -15,6 +15,8 @@ const elements = ingredients.map(ingredient =>
   
     ingredientEl.classList.add('item');
     ingredientEl.innerHTML = ingredient;
-    ingredientsEl.append(ingredientEl);
+  return (ingredientEl);
     }
 )
+
+ingredientsEl.append(...elements);

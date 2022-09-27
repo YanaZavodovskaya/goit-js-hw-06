@@ -2,12 +2,15 @@ const inputText = document.getElementById("name-input");
 const outputText = document.getElementById("name-output");
 
 inputText.addEventListener("input", textMarkup);
-inputText.addEventListener("blur", textMarkup);
+inputText.addEventListener("input", inputDefault);
 
 function textMarkup(evt) {
-  if (outputText.textContent === "") {
-      outputText.textContent = "Anonymous";
-  } else {
-    outputText.textContent = evt.target.value;
-    }  
+    outputText.textContent = evt.target.value;    
 }
+
+function inputDefault() {
+  if (outputText.textContent === "") {
+        outputText.textContent = "Anonymous";
+    } 
+}
+
